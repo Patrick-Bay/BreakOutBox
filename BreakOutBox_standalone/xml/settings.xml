@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<settings>
+	<version>
+		<revision>1.2.0</revision>		
+	</version>
+	<apiserver>
+		<localAddress>127.0.0.1</localAddress>
+		<localPort>8090</localPort>
+		<serverUserAgent>BreakOutBox HTTP API Daemon</serverUserAgent>
+	</apiserver>
+	<tor>
+		<autostart>true</autostart>
+		<controlAddress>127.0.0.1</controlAddress>
+		<controlPort>9051</controlPort>
+		<socks5address>127.0.0.1</socks5address>
+		<socks5port>1080</socks5port>
+		<controlpass><![CDATA[~bR3ak0(_)+__|3O<S]]></controlpass>
+		<launchurl><![CDATA[https://www.startpage.com/]]></launchurl>
+	</tor>
+	<launcher>
+		<browser name="Internet Explorer" id="ie">		
+			<prelaunch invoke="updateWindowsRegistry">
+				<content><![CDATA[
+[HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Internet Settings]
+"EnableHttp1_1"=dword:00000001
+"WarnOnIntranet"=dword:00000001
+"AutoConfigProxy"="wininet.dll"
+"WarnOnPost"=hex:01,00,00,00
+"WarnonBadCertRecving"=dword:00000001
+"WarnOnPostRedirect"=dword:00000001
+"AutoProxyDetectType"=dword:00000002
+%option_socks5%
+]]></content>
+			</prelaunch>
+			<options>				
+				<option name="Use SOCKS5 proxy" id="socks5" optional="true" enabled="true" editable="false"><![CDATA["ProxyEnable"=dword:00000001
+"ProxyOverride"="%tor_socks_ip%;localhost;<local>"
+"ProxyServer"="socks=%tor_socks_ip%:%tor_socks_port%"]]></option>
+				<option name="Validate executable before launch" id="exevalidate" optional="true" enabled="true" />
+				<switch name="Use InPrivate mode" id="inprivate" optional="true" enabled="true"><![CDATA[-private]]></switch>	
+				<switch name="Disable Add-ons" id="addons" optional="true" enabled="true"><![CDATA[-extoff]]></switch>
+				<switch name="Disable opportunistic frame merging" id="framemerging" optional="true" enabled="true"><![CDATA[-noframemerging]]></switch>
+				<switch name="Disable hang recovery" id="hangrecovery" optional="true" enabled="true"><![CDATA[-nohangrecovery]]></switch>
+				<switch name="Launch homepage on startup: %tor_launch_url%" id="launchurl" optional="true" enabled="true"><![CDATA[%tor_launch_url%]]></switch>
+			</options>
+			<postlaunch />
+			<exechecksums>140325733f0dfb82a6a600ce301478ef:9.0.8112.16421 64-bit</exechecksums>
+			<executable>iexplore.exe</executable>
+			<path os="win"><![CDATA[]]></path>
+		</browser>
+		<browser name="Chrome" id="chrome">		
+			<prelaunch />
+			<options>				
+				<!-- Note the use of quotes for complex parameters below... -->
+				<!-- Note that command line switches don't appear to require quotes as specified in the Chromium documentation -->
+				<option name="Validate executable before launch" id="exevalidate" optional="true" enabled="true" />
+				<switch name="Use SOCKS5 proxy" id="socks5" optional="false" enabled="true"><![CDATA["--proxy-server=socks5://%tor_socks_ip%:%tor_socks_port%"]]></switch>
+				<switch name="Use DNS proxy" id="dnsproxy" optional="true" enabled="true"><![CDATA["--host-resolver-rules=MAP * 0.0.0.0, EXCLUDE %tor_socks_ip%"]]></switch>
+				<switch name="Launch homepage on startup: %tor_launch_url%" id="launchurl" optional="true" enabled="true"><![CDATA[--homepage "%tor_launch_url%"]]></switch>
+				<switch name="Use Incognito mode" id="incognito" optional="true" enabled="true"><![CDATA[--incognito]]></switch>
+				<switch name="Disable browser extensions" id="extensions" optional="true" enabled="true"><![CDATA[--disable-extensions]]></switch>
+				<switch name="Disable plugins" id="plugins" optional="true" enabled="true"><![CDATA[--disable-plugins]]></switch>
+				<switch name="Disable plugins discovery" id="pluginsdiscovery" optional="true" enabled="true"><![CDATA[--disable-plugins-discovery]]></switch>
+				<switch name="Disable JavaScript" id="javascript" optional="true" enabled="true"><![CDATA[--disable-javascript]]></switch>
+				<switch name="Disable site prefetch" id="preconnect" optional="true" enabled="true"><![CDATA[--disable-preconnect]]></switch>
+				<switch name="Disable secure to insecure content loading" id="securitymixing" optional="true" enabled="true"><![CDATA[--no-displaying-insecure-content ]]></switch>				
+				<switch name="Disable hyperlink auditing pings" id="linkauditpings" optional="true" enabled="true"><![CDATA[--no-pings]]></switch>
+				<switch name="Disable background content restore" id="backgroundcontentrestore" optional="true" enabled="true"><![CDATA[--disable-restore-background-contents]]></switch>
+				<switch name="Disable restore sessions" id="sessionrestore" optional="true" enabled="true"><![CDATA[--disable-restore-session-state]]></switch>
+				<switch name="Disable tab synch" id="tabsynch" optional="true" enabled="true"><![CDATA[--disable-sync-tabs]]></switch>				
+			</options>
+			<postlaunch />
+			<!-- MD5 checksums of verified versions -->
+			<exechecksums>9b593137fbcc7c1e5d0e4a422749d9a5:32.0.1700.102 m;5640b4c10682fbc39c86c8c7a8392b5e:32.0.1700.107 m</exechecksums>
+			<executable>chrome.exe</executable>
+			<path os="win"><![CDATA[C:\Program Files (x86)\Google\Chrome\Application\]]></path>
+		</browser>
+		<browser name="Firefox" id="firefox">
+			<!-- Firefox requires a profile to be created and populated instead of command line options (there are only a handful). -->
+			<!--
+1.-safe-mode: Starts Firefox in safe mode with all extensions, themes, bookmarks, toolbars disabled and default.
+2.-p: Brings up the Firefox profile manager dialogue to let you choose your profile
+3.<url>: Opens the <url> with Firefox
+4.-createprofile <profilename>: Creates a profile with <profilename>
+5.-createprofile “profilename c:profilelocation”: Creates the profile “profilename” at location “c:profilelocation”
+6.-migration: Starts Firefox with the import wizard.
+7.-console: Starts Firefox with the debugging console.
+8.-jsconsole: Starts Firefox with the javascript console
+9. -search “terms”: Starts Firefox and searches for “terms” using the default search engine
+10.-setDefaultBrowser: Sets Firefox as the default browser
+11. -no-remote -P “<profilename>”: Starts Firefox in a different profile than the current instance of Firefox
+12.-inspector <url>: Starts DOM Inspector with<url>.
+13.-chrome chrome://inspector/content/inspector.xul: Starts DOM Inspector
+14.-new-window <url>: Opens Firefox with <url> into a second window
+15.-new-tab <url>: Opens Firefox with <url> is an extra tab
+16.-install-global-theme “/path/to/theme”: Installs a theme into the application directory so that it is available in all profiles
+17.-install-global-extension “/path/to/extension”: Installs an extension into the application directory so that it is available in all profiles
+-->
+			<prelaunch invoke="createFirefoxProfile">
+				<path>app-storage:/mozilla/firefox</path>
+				<filename>prefs.js</filename>
+				<content><![CDATA[%option_socks5%
+%option_dnsproxy%
+%option_launchurl%]]></content>
+			</prelaunch>
+			<options>
+				<option name="Use SOCKS5 proxy" id="socks5" optional="true" enabled="true" editable="true"><![CDATA[user_pref("network.proxy.socks", "%tor_socks_ip%");
+user_pref("network.proxy.socks_port", %tor_socks_port%);
+user_pref("network.proxy.type", 1);]]></option>
+				<option name="Validate executable before launch" id="exevalidate" optional="true" enabled="true" />
+				<switch name="Use custom browsing profile" id="customprofile" optional="false" enabled="true" editable="false"><![CDATA["-P" "breakoutbox"]]></switch>
+				<option name="Use DNS proxy" id="dnsproxy" optional="false" enabled="true"><![CDATA[user_pref("network.proxy.socks_remote_dns", %attribute_enabled%);]]></option>
+				<switch name="Launch Firefox in new process" id="newprocess" optional="false" enabled="true"><![CDATA[-no-remote]]></switch>				
+				<option name="Launch homepage on startup: %tor_launch_url%" id="launchurl" optional="true" enabled="true"><![CDATA[user_pref("browser.startup.homepage", "%tor_launch_url%");]]></option>
+				<switch name="Use Private Mode" id="privatemode" optional="true" enabled="true"><![CDATA[-private]]></switch>
+				<option name="Use Do Not Track HTTP header" id="donottrackheader" optional="true" enabled="true"><![CDATA[user_pref("privacy.donottrackheader.enabled",  %attribute_enabled%);]]></option>
+				<switch name="Use Safe Mode" id="safemode" optional="true" enabled="false"><![CDATA[-safe-mode]]></switch>
+			</options>
+			<postlaunch />
+			<executable>firefox.exe</executable>
+			<path os="win"><![CDATA[C:\Program Files (x86)\Mozilla Firefox\]]></path>
+		</browser>
+		<!-- browser name="Opera" id="opera">
+			<path os="win"></path>
+		</browser>
+		<browser name="Safari" id="safari">
+			<path os="win"></path>
+		</browser -->
+	</launcher>
+</settings>

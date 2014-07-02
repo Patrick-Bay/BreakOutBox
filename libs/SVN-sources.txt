@@ -1,0 +1,4 @@
+SwAG: https://swag-as.googlecode.com/svn/trunk/
+as3crypto: http://as3crypto.googlecode.com/svn/trunk/as3crypto/src/
+WRASE: https://wrase.googlecode.com/svn/trunk/src/
+TorAS: https://toras.googlecode.com/svn/trunk/src/

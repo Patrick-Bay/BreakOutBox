@@ -1,0 +1,22 @@
+<html>
+	<head><title>BreakOutBox Tester</title></head>
+	<script language="javascript" src="http://127.0.0.1:8080/API"></script>
+	<body>		
+		<script>
+		alert ("About to invoke...");
+		if (!_box) {
+			_box={};
+			_box.invoke=function() {
+			   alert ("BreakOutBox isn't running");
+			}
+		}
+		function onAJAXComplete ( data, textStatus, jqXHR) {
+			//alert ("onAJAXComplete");				
+			alert('_box.response ['+jqXHR.status+']: '+_box.response); //set by BreakOutBox				
+		}
+		var sendData=new Object();
+		sendData.data="Now calling BreakOutBox...";
+		_box.invoke("/test", {data:sendData}).always(onAJAXComplete);
+		</script>
+	</body>
+</html>
