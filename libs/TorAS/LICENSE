@@ -1,0 +1,230 @@
+The TorAS ActionScript library incorporates a number of third-party libraries and binaries.
+
+All applicable licenses are listed below:
+
+TorAS
+-----
+https://code.google.com/p/toras/
+
+
+The MIT License (MIT)
+
+Copyright (c) 2013 Patrick Bay
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE. 
+
+
+Tor Project Binary
+------------------
+
+                    This file contains the license for Tor,
+        a free software project to provide anonymity on the Internet.
+
+        It also lists the licenses for other components used by Tor.
+
+       For more information about Tor, see https://www.torproject.org/.
+
+             If you got this file as a part of a larger bundle,
+        there may be other license terms that you should be aware of.
+
+===============================================================================
+Tor is distributed under this license:
+
+Copyright (c) 2001-2004, Roger Dingledine
+Copyright (c) 2004-2006, Roger Dingledine, Nick Mathewson
+Copyright (c) 2007-2012, The Tor Project, Inc.
+
+Redistribution and use in source and binary forms, with or without
+modification, are permitted provided that the following conditions are
+met:
+
+    * Redistributions of source code must retain the above copyright
+notice, this list of conditions and the following disclaimer.
+
+    * Redistributions in binary form must reproduce the above
+copyright notice, this list of conditions and the following disclaimer
+in the documentation and/or other materials provided with the
+distribution.
+
+    * Neither the names of the copyright owners nor the names of its
+contributors may be used to endorse or promote products derived from
+this software without specific prior written permission.
+
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
+A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
+OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
+SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
+DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+===============================================================================
+src/common/strlcat.c and src/common/strlcpy.c by Todd C. Miller are licensed
+under the following license:
+
+ * Copyright (c) 1998 Todd C. Miller <Todd.Miller@courtesan.com>
+ * All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ * 3. The name of the author may not be used to endorse or promote products
+ *    derived from this software without specific prior written permission.
+ *
+ * THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESS OR IMPLIED WARRANTIES,
+ * INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+ * AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL
+ * THE AUTHOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS;
+ * OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+ * WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+ * OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+===============================================================================
+src/config/geoip is licensed under the following license:
+
+OPEN DATA LICENSE (GeoLite Country and GeoLite City databases)
+
+Copyright (c) 2008 MaxMind, Inc.  All Rights Reserved.
+
+All advertising materials and documentation mentioning features or use of
+this database must display the following acknowledgment:
+"This product includes GeoLite data created by MaxMind, available from
+http://maxmind.com/"
+
+Redistribution and use with or without modification, are permitted provided
+that the following conditions are met:
+1. Redistributions must retain the above copyright notice, this list of
+conditions and the following disclaimer in the documentation and/or other
+materials provided with the distribution.
+2. All advertising materials and documentation mentioning features or use of
+this database must display the following acknowledgement:
+"This product includes GeoLite data created by MaxMind, available from
+http://maxmind.com/"
+3. "MaxMind" may not be used to endorse or promote products derived from this
+database without specific prior written permission.
+
+THIS DATABASE IS PROVIDED BY MAXMIND, INC ``AS IS'' AND ANY
+EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL MAXMIND BE LIABLE FOR ANY
+DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+DATABASE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+===============================================================================
+If you got Tor as a static binary with OpenSSL included, then you should know:
+ "This product includes software developed by the OpenSSL Project
+ for use in the OpenSSL Toolkit (http://www.openssl.org/)"
+===============================================================================
+
+
+
+AS3Crypto
+---------
+https://code.google.com/p/as3crypto/
+
+
+This software is covered under the following copyright:
+
+/*
+ * Copyright (c) 2007 Henri Torgemane
+ * All Rights Reserved.
+ *
+ * BigInteger, RSA, Random and ARC4 are derivative works of the jsbn library
+ * (http://www-cs-students.stanford.edu/~tjw/jsbn/)
+ * The jsbn library is Copyright (c) 2003-2005  Tom Wu (tjw@cs.Stanford.EDU)
+ *
+ * MD5, SHA1, and SHA256 are derivative works (http://pajhome.org.uk/crypt/md5/)
+ * Those are Copyright (c) 1998-2002 Paul Johnston & Contributors (paj@pajhome.org.uk)
+ *
+ * SHA256 is a derivative work of jsSHA2 (http://anmar.eu.org/projects/jssha2/)
+ * jsSHA2 is Copyright (c) 2003-2004 Angel Marin (anmar@gmx.net)
+ *
+ * AESKey is a derivative work of aestable.c (http://www.geocities.com/malbrain/aestable_c.html)
+ * aestable.c is Copyright (c) Karl Malbrain (malbrain@yahoo.com)
+ *
+ * BlowFishKey, DESKey and TripeDESKey are derivative works of the Bouncy Castle Crypto Package (http://www.bouncycastle.org)
+ * Those are Copyright (c) 2000-2004 The Legion Of The Bouncy Castle
+ *
+ * Base64 is copyright (c) 2006 Steve Webster (http://dynamicflash.com/goodies/base64)
+ *
+ * Redistribution and use in source and binary forms, with or without modification, 
+ * are permitted provided that the following conditions are met:
+ *
+ * Redistributions of source code must retain the above copyright notice, this list 
+ * of conditions and the following disclaimer. Redistributions in binary form must 
+ * reproduce the above copyright notice, this list of conditions and the following 
+ * disclaimer in the documentation and/or other materials provided with the distribution.
+ *
+ * Neither the name of the author nor the names of its contributors may be used to endorse
+ * or promote products derived from this software without specific prior written permission.
+ *
+ * THE SOFTWARE IS PROVIDED "AS-IS" AND WITHOUT WARRANTY OF ANY KIND, 
+ * EXPRESS, IMPLIED OR OTHERWISE, INCLUDING WITHOUT LIMITATION, ANY 
+ * WARRANTY OF MERCHANTABILITY OR FITNESS FOR A PARTICULAR PURPOSE.  
+ *
+ * IN NO EVENT SHALL TOM WU BE LIABLE FOR ANY SPECIAL, INCIDENTAL,
+ * INDIRECT OR CONSEQUENTIAL DAMAGES OF ANY KIND, OR ANY DAMAGES WHATSOEVER
+ * RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER OR NOT ADVISED OF
+ * THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF LIABILITY, ARISING OUT
+ * OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+ *
+ */
+ 
+Address all questions regarding this license to:
+
+ Henri Torgemane
+ henri_torgemane@yahoo.com
+ 
+
+Additionally, the MD5 algorithm is covered by the following notice:
+
+/* Copyright (C) 1991-2, RSA Data Security, Inc. Created 1991. All rights reserved.
+ * 
+ * License to copy and use this software is granted provided that it
+ * is identified as the "RSA Data Security, Inc. MD5 Message-Digest
+ * Algorithm" in all material mentioning or referencing this software
+ * or this function.
+ * 
+ * License is also granted to make and use derivative works provided
+ * that such works are identified as "derived from the RSA Data
+ * Security, Inc. MD5 Message-Digest Algorithm" in all material
+ * mentioning or referencing the derived work.
+ * 
+ * RSA Data Security, Inc. makes no representations concerning either
+ * the merchantability of this software or the suitability of this
+ * software for any particular purpose. It is provided "as is"
+ * without express or implied warranty of any kind.
+ * 
+ * These notices must be retained in any copies of any part of this
+ * documentation and/or software.
+ */
